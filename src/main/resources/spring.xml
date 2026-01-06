@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <bean id="dev" class="com.rizvi.Dev" autowire="byType">
+    <!-- bean definitions here -->
+    <bean name="network" class="com.rizvi.Network"/>
+    <bean name="phone" class="com.rizvi.Phone" autowire="byName">
+ <!--   <constructor-arg value= "12"  />-->
+ <!--   <constructor-arg value= "10.55" />-->
+      <!--  <property name="network" ref="network"/>-->
+
+    </bean>
+        <!--<property name="network" ref="network"/>-->
+    <!--<bean id="dev" class="com.rizvi.Dev" autowire="byType">-->
         <!-- <property name="name" value="Rizvi"/> -->
         <!-- <property name="age" value="26"/> -->
         <!-- <constructor-arg name="name" value="Rizvi"/> -->
@@ -13,10 +23,10 @@
         <!-- <property name="comp" ref="comp1" />-->
 
 
-   </bean>
 
-    <bean id="comp" class="com.rizvi.Laptop"/>
-    <bean id="comp1" class="com.rizvi.Desktop" primary="true"/>
+
+   <!-- <bean id="comp" class="com.rizvi.Laptop"/>-->
+   <!-- <bean id="comp1" class="com.rizvi.Desktop" primary="true"/>-->
 
 </beans>
 
